@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: /wanzi/health
+        healthCheckInterval: 15s
+        instance-id: user-service
+  application:
+    name: user-service
+server:
+  port: 8503
+feign:
+  hystrix:
+    enabled: true
