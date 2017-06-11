@@ -28,9 +28,12 @@ Consul是一个分布式高可用的系统，它包含多个组件，但是作�
 `http://localhost:8503/wanzi?mobile=12345`
 
 ## Feign
-Feign是一个声明式的Web Service客户端，它使得编写Web Service客户端变得更加简单。
+Feign是一个声明式的Web Service客户端，它使得编写Web Servce客户端变得更加简单。
 我们只需要使用Feign来创建一个接口并用注解来配置它既可完成。它具备可插拔的注解支持，包括Feign注解和JAX-RS注解。Feign也支持可插拔的编码器和解码器。
+
 Spring Cloud为Feign增加了对Spring MVC注解的支持，还整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现。
+
+Spring cloud有两种调用方式，一种是ribbon+restTemplate，另一种是feign。Feign已经集成了Ribbon，因此，如果你已经使用@FeignClient那么，你可以直接使用Ribbon。
 
 ## Reference
 * [Consul架构](http://zhangyuyu.github.io/2016/04/27/%E5%BE%AE%E6%9C%8D%E5%8A%A1-consul%E6%9E%B6%E6%9E%84/)
