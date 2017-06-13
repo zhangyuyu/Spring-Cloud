@@ -1,7 +1,7 @@
 spring:
   cloud:
     consul:
-      host: localhost
+      host: 192.168.33.1
       port: 8500
       discovery:
         healthCheckPath: /wanzi/health

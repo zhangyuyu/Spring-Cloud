@@ -1,0 +1,49 @@
+version: '3'
+services:
+  user-service:
+    image: java:8-jre-alpine
+    container_name: user-node
+    hostname: user-service
+    working_dir: /user-service
+    command: java -jar user-service-0.0.1-SNAPSHOT.jar
+    ports:
+      - "8503:8503"
+    volumes:
+      - ./user-service/build/libs/:/user-service
+    links:
+      - name-service
+    depends_on:
+      - name-service
+    restart: always
+
+  name-service:
+    image: java:8-jre-alpine
+    container_name: name-node
+    hostname: name-service
+    working_dir: /name-service
+    command: java -jar name-service-0.0.1-SNAPSHOT.jar
+    volumes:
+      - ./name-service/build/libs/:/name-service
+    ports:
+      - "8502:8502"
+    depends_on:
+      - registrator
+    restart: always
+
+  registrator:
+    image: gliderlabs/registrator:latest
+    command: "-ip ${CONSUL_HOST} consul://${CONSUL_HOST}:8500"
+    container_name: registrator-node
+    hostname: ${CONSUL_HOST}
+    depends_on:
+      - consul
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+
+  consul:
+    image:  gliderlabs/consul-server:latest
+    command: "-advertise=${CONSUL_HOST} -server -bootstrap"
+    container_name: consul
+    hostname: ${CONSUL_HOST}
+    ports:
+      - "8500:8500"
