@@ -27,23 +27,13 @@ services:
     ports:
       - "8502:8502"
     depends_on:
-      - registrator
-    restart: always
-
-  registrator:
-    image: gliderlabs/registrator:latest
-    command: "-ip ${CONSUL_HOST} consul://${CONSUL_HOST}:8500"
-    container_name: registrator-node
-    hostname: ${CONSUL_HOST}
-    depends_on:
       - consul
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock
+    restart: always
 
   consul:
     image:  gliderlabs/consul-server:latest
     command: "-advertise=${CONSUL_HOST} -server -bootstrap"
     container_name: consul
-    hostname: ${CONSUL_HOST}
+    hostname: consul-server
     ports:
       - "8500:8500"
