@@ -12,8 +12,8 @@ services:
       - CONSUL_HOST=${CONSUL_HOST}
     volumes:
       - ./user-service/build/libs/:/user-service
-    links:
-      - name-service
+    networks:
+      - wanzi-net
     depends_on:
       - name-service
     restart: always
@@ -28,6 +28,8 @@ services:
       - CONSUL_HOST=${CONSUL_HOST}
     volumes:
       - ./name-service/build/libs/:/name-service
+    networks:
+      - wanzi-net
     ports:
       - "8502:8502"
     depends_on:
@@ -41,3 +43,8 @@ services:
     hostname: consul-server
     ports:
       - "8500:8500"
+    networks:
+      - wanzi-net
+
+networks:
+  wanzi-net:

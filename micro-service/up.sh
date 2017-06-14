@@ -13,6 +13,9 @@ docker-compose stop
 echo "${blue}==>Removing stopped container"
 docker-compose rm -f
 
+echo "${blue}==>Removing exiting network"
+docker network rm microservice_wanzi-net
+
 pushd ./user-service
   ./gradlew clean build
   chmod 777 ./build/libs/*.jar
