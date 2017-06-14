@@ -8,6 +8,8 @@ services:
     command: java -jar user-service-0.0.1-SNAPSHOT.jar
     ports:
       - "8503:8503"
+    environment:
+      - CONSUL_HOST=${CONSUL_HOST}
     volumes:
       - ./user-service/build/libs/:/user-service
     links:
@@ -22,6 +24,8 @@ services:
     hostname: name-service
     working_dir: /name-service
     command: java -jar name-service-0.0.1-SNAPSHOT.jar
+    environment:
+      - CONSUL_HOST=${CONSUL_HOST}
     volumes:
       - ./name-service/build/libs/:/name-service
     ports:
