@@ -3,7 +3,7 @@
 blue=`tput setaf 6`
 
 #export CONSUL_HOST=`ifconfig  | grep inet | awk '{print $2}' | cut -d "/" -f 1 | tail -n 1`
-export CONSUL_HOST=192.168.33.1
+export CONSUL_HOST=`ipconfig getifaddr en0`
 echo "${blue}==>Setting environment variable"
 echo "Consul host is ${CONSUL_HOST}"
 
