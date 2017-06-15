@@ -2,8 +2,12 @@
 
 blue=`tput setaf 6`
 
-#export CONSUL_HOST=`ifconfig  | grep inet | awk '{print $2}' | cut -d "/" -f 1 | tail -n 1`
-export CONSUL_HOST=`ipconfig getifaddr en0`
+if [ "$(uname)" == "Darwin" ]; then
+    export CONSUL_HOST=`ipconfig getifaddr en0`
+else
+    export CONSUL_HOST=`hostname -I | awk '{print $1}'`
+fi
+
 echo "${blue}==>Setting environment variable"
 echo "Consul host is ${CONSUL_HOST}"
 
@@ -18,12 +22,14 @@ docker network rm microservice_wanzi-net
 
 pushd ./user-service
   ./gradlew clean build
-  chmod 777 ./build/libs/*.jar
+  sudo chmod 777 build/
+  sudo chmod 777 ./build/libs/*.jar
 popd
 
 pushd ./name-service
   ./gradlew clean build
-  chmod 777 ./build/libs/*.jar
+  sudo chmod 777 build/
+  sudo chmod 777 ./build/libs/*.jar
 popd
 
 docker-compose up
