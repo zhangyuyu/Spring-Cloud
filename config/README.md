@@ -32,5 +32,5 @@ git add
 ```
 
 ## 配置文件在remote git仓库时候
-spring.cloud.config.server.git.uri=https://github.com/spring-cloud-samples/config-repo
+spring.cloud.config.server.git.uri=https://github.com/zhangyuyu/Spring-Cloud
 
