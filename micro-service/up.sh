@@ -20,6 +20,8 @@ docker-compose rm -f
 echo "${blue}==>Removing exiting network"
 docker network rm microservice_wanzi-net
 
+sudo chmod 777 -R .
+
 pushd ./user-service
   ./gradlew clean build
   sudo chmod 777 build/
