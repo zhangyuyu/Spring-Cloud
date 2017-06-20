@@ -26,7 +26,7 @@ Spring Cloud Config为分布式系统中的外部配置提供服务器和客户�
 cd $HOME/Documents/spring-cloud
 git init .
 echo info.description = This is from local application properties file. > application.properties
-echo info.description = This is from local config client dev properties file. > application.properties
+echo info.description = This is from local config client dev properties file. > application-dev.properties
 git add 
 
 ```
