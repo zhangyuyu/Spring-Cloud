@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        healthCheckPath: /wanzi/health
+        healthCheckInterval: 15s
+        instance-id: consul-user
+  application:
+    name: consul-user
+server:
+  port: 8503
