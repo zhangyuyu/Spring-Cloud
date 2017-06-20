@@ -1,4 +1,4 @@
-.gradle
+../../hystrix/user-service-feign/.gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 

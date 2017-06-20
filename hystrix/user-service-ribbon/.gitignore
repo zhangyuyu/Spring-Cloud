@@ -1,4 +1,4 @@
-../../hystrix/name-service/.gradle
+../../hystrix/user-service-ribbon/.gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
