@@ -5,7 +5,7 @@ spring:
       discovery:
         healthCheckPath: /wanzi/health
         healthCheckInterval: 15s
-        instance-id: name-service
+        instance-id: ${spring.application.name}:${random.value}
   application:
     name: name-service
 server:

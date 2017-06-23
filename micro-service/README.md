@@ -50,6 +50,24 @@ vagrant@vagrant:~/Spring-Cloud/micro-service$ . ./up.sh
 `http://localhost:8500/ui/`
 4. 在本机上单独访问`name-service`和`user-service`
 
+### 四、负载均衡
+>为了启动多台name service容器  
+1）在docker-compose.yml文件里删除了`container_name: name-node`  
+2）去掉了与docker宿主机的端口映射"8502"，只是暴露端口号给同一网络  
+
+>为了在consul注册同一机器上同一服务的多个实例
+默认情况下，Consul实例注册时会使用一个与Spring Application Context ID相同的ID。而默认的Spring Application Context ID是`${spring.application.name}:comma,separated,profiles:${server.port}`。
+如果需要保证独立运行，可以使用Spring Cloud的`spring.cloud.consul.discovery.instanceId`这个配置项，来替代默认值。
+因此修改了name-service里`application.yml`的instance-id为随机值`${spring.application.name}:${random.value}`
+
+1. 启动多台name service容器
+`docker-compose scale name-service=3`
+2. 访问consul ui
+`http://localhost:8500/ui/`可以看到name-service有三个容器注册其中
+![](Consul-UI.png)
+3. 查看命令行日志
+发现`name-service_1``name-service_2``name-service_3`交替出现
+
 
 ---
 ## NOTES
