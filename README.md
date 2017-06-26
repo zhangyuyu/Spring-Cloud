@@ -45,13 +45,17 @@ Spring Cloud包含了多个子项目（针对分布式系统中涉及的多个�
 * [consul](https://github.com/zhangyuyu/Spring-Cloud/blob/master/consul/README.md)
 * [hystrix](https://github.com/zhangyuyu/Spring-Cloud/blob/master/hystrix/README.md)
 * [zipkin](https://github.com/zhangyuyu/Spring-Cloud/blob/master/zipkin/README.md)
+* [zuul](https://github.com/zhangyuyu/Spring-Cloud/blob/master/zuul/README.md)
 * [micro-service](https://github.com/zhangyuyu/Spring-Cloud/blob/master/micro-service/README.md)
 该Demo是基于consul在dokcer上搭建的应用。
 
 ---
 ## 四、References
 * [Spring Cloud中文网](https://springcloud.cc/)
-* [Josh Long 现场演示Spring Cloud Demo](http://ugcdl.video.gtimg.com/flv/238/116/w0509bebaly.m701.mp4?vkey=9A6D2D4E39215F32425133EE6CBDD4E20A2EA53AE98882B0629D3EACE36CFC5011F3AA378493B3DE1A9B542916090E64E5EC3CB532C718016F2F2C0D489D774525E4C10EAAB09BDB9B741CAE74FC15F8F6C8D3F37870E05D&amp;br=29&amp;platform=2&amp;fmt=auto&amp;level=0&amp;sdtfrom=v1010&amp;guid=45c3ae4bbff5383c0515108875534e0e)
-* [大话Spring Cloud](http://www.ityouknow.com/springcloud/2017/05/01/simple-springcloud.html)
-* [Spring Cloud基础教程](http://blog.didispace.com/Spring-Cloud%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
+* [Josh Long 现场演示Spring Cloud Demo](http://ugcbsy.qq.com/flv/238/116/w0509bebaly.m701.mp4?vkey=4F06B3D7AB139CAE211B4AE30BA6214360366B0FD8ACDEBD7F8C75D510BE973CD5C47CFBFF0F38C2E46238BB12DC091D482309F1137FE97407FE7FC72EA65766F0441A607D5EF5F42FB9F333B4FCFF29C8A25D552614D3E0&br=29&platform=2&fmt=auto&level=0&sdtfrom=v1010&guid=45c3ae4bbff5383c0515108875534e0e)
 * [Spring Cloud技术分析](http://tech.lede.com/2017/03/15/rd/server/SpringCloud0/)
+* [翟永超 Spring Cloud基础教程](http://blog.didispace.com/Spring-Cloud%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
+* [纯洁的微笑 Spring Cloud](http://www.ityouknow.com/springcloud/2016/12/30/springcloud-collect.html)
+* [许进 跟我学Spring Cloud](http://xujin.org/categories/%E8%B7%9F%E6%88%91%E5%AD%A6Spring-Cloud/)
+* [方志朋 Spring Cloud 专栏](http://blog.csdn.net/column/details/15197.html)
+* [周立 Spring Cloud](http://www.itmuch.com/)

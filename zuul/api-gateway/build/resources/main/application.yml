@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+  application:
+    name: api-gateway
+server:
+  port: 5555
+zuul:
+  prefix: /wanzi
+  routes:
+    user-service:
+      path: /user-service**
+      serviceId: user-service
+    name-service:
+      path: /name-service/**
+      serviceId: name-service
+    test:
+      path: /redirect/**
+      url: http://google.com
